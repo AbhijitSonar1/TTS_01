@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/validation_form.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:58:21 GMT -->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Task Tracking System</title>
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+	<!-- icons -->
+	<link href="{% static 'fonts/simple-line-icons/simple-line-icons.min.css' %} " rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %} " rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/material-design-icons/material-icon.css' %} " rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="{% static '/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{% static '/assets/plugins/flatpicker/css/flatpickr.min.css' %}" />
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="{% static '/assets/plugins/material/material.min.css' %}">
+	<link rel="stylesheet" href="{% static '/assets/css/material_style.css' %}">
+	<!-- Theme Styles -->
+	<link href="{% static '/assets/css/theme/dark/theme_style.css' %}" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/pages/formlayout.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/theme-color.css' %}" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico" />
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
+	<div class="page-wrapper">
+		<!-- start header -->
+		
+		{% include 'temp/header.html' %}
+		<!-- end header -->
+	
+
+		<!-- start page container -->
+		<div class="page-container">
+			<!-- start sidebar menu -->
+			{% include 'temp/sidemenu.html' %}
+			<!-- end sidebar menu -->
+
+			<!-- start page content -->
+			<form method="POST">
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Edit User </div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="{% url 'app_pr:Dashboard'%}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+							
+								<li class="active">Dashboard</li>
+							</ol>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<div class="card card-box">
+								<div class="card-head">
+									<button id="panel-button1"
+										class="mdl-button mdl-js-button mdl-button--icon pull-right"
+										data-upgraded=",MaterialButton">
+										<i class="material-icons">more_vert</i>
+									</button>
+									<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+										data-mdl-for="panel-button1">
+										<li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+										</li>
+										<li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+										</li>
+										<li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+											here</li>
+									</ul>
+								</div>
+								<div class="card-body" id="bar-parent1">
+									<form action="#" id="form_sample_1" class="form-horizontal">
+										<div class="form-body">
+											<div class="form-group row">
+												<label class="control-label col-md-3">FirstName
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-4">
+													<input type="text" name="fname" value="{{Superuser_data.userfname}}" data-required="1"
+														class="form-control" /> </div>
+											</div>
+											
+											<div class="form-group row">
+												<label class="control-label col-md-3">LastName
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-4">
+													<input type="text" name="lname" value="{{Superuser_data.userlname}}" data-required="1"
+														class="form-control" /> </div>
+											</div>
+
+											<div class="form-group row">
+												<label class="control-label col-md-3">Email
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-4">
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-envelope"></i>
+														</span>
+														<input type="text" class="form-control" name="email" value="{{Superuser_data.useremail}}"
+															placeholder="Email Address"> </div>
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label class="control-label col-md-3">Password
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-4">
+													<input type="password" name="password" value="{{Superuser_data.password}}" data-required="1"
+														class="form-control" /> </div>
+											</div>
+
+											
+											
+											<div class="form-group row">
+												<label class="control-label col-md-3">Select
+													<span class="required"> * </span>
+												</label>
+												<div class="col-md-4">
+													
+													<select name="type" class="form-select" name="select">
+														{% if Superuser_data.pk > 0 %}
+														<option selected value="{{Superuser_data.type}}">{{Superuser_data.type}}</option>
+														{%else%}
+														<option value="">Select...</option>
+														{% endif %}
+														<option value="Admin">Admin</option>
+														<option value="TL">TL</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="offset-md-3 col-md-9">
+												<button name="update" type="submit" class="btn btn-info m-r-20">update</button>
+											</a href="{% url 'app_pr:SuperUsers' %}">	
+											<button type="button" class="btn btn-default">Cancel</button>
+										</a>	
+										</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+
+					
+
+				</div>
+			</div>
+
+
+
+			</form>
+			<!-- end page content -->
+			
+		</div>
+		<!-- end page container -->
+		<!-- start footer -->
+		{% include 'temp/footer.html' %}
+		<!-- end footer -->
+	</div>
+	<!-- start js include path -->
+	<script src="{% static '/assets/plugins/jquery/jquery.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/popper/popper.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-blockui/jquery.blockui.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-validation/js/jquery.validate.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-validation/js/additional-methods.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static '/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.html' %}"></script>
+	<!-- Common js-->
+	<script src="{% static '/assets/js/app.js' %}"></script>
+	<script src="{% static '/assets/js/pages/validation/form-validation.js' %}"></script>
+	<script src="{% static '/assets/js/layout.js' %}"></script>
+	<script src="{% static '/assets/js/theme-color.js' %}"></script>
+	<!-- Material -->
+	<script src="{% static '/assets/plugins/material/material.min.js' %}"></script>
+	<!-- end js include path -->
+</body>
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/validation_form.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:58:21 GMT -->
+</html>

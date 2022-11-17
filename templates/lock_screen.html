@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/lock_screen.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:55:18 GMT -->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="RedstarHospital" />
+	<title>Aimer Innovation</title>
+	<!-- google font -->
+	<link href="{% static 'css\css2.css' %}" rel="stylesheet"
+		type="text/css" />
+	<!-- icons -->
+	<link href="{% static 'fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static '/assets/plugins/iconic/css/material-design-iconic-font.min.css' %}">
+	<!-- bootstrap -->
+	<link href="{% static '/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css' %}" />
+	<!-- style -->
+	<link rel="stylesheet" href="{% static '/assets/css/pages/extra_pages.css' %}">
+	<!-- favicon -->
+	{% comment %} <link rel="shortcut icon" href="{% static 'http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico' %}" /> {% endcomment %}
+</head>
+
+<body>
+	<div class="limiter">
+		<div class="container-login100 page-background">
+			<div class="wrap-login100">
+				<form  method="POST" class="login100-form validate-form">
+					{% comment %} <span class="login100-form-logo">
+						{% comment %} <img src="../assets/img/dp.jpg" class="imgroundcorners" alt="John Doe"> 
+					</span> {% endcomment %}
+					<span class="login100-form-title  p-t-27">
+						{{request.session.userfname}} {{request.session.userlname}}
+					</span>
+					<p class="text-center txt-locked">
+					<img style="height:30px;"  src="\media\images\lock.png">
+						Locked
+						
+					</p>
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+				
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- start js include path -->
+	<script src="{% static '/assets/plugins/jquery/jquery.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static '/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static '/assets/js/pages/extra-pages/pages.js' %}"></script>
+	<!-- end js include path -->
+</body>
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/lock_screen.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:55:22 GMT -->
+</html>

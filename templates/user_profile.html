@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/user_profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:55:05 GMT -->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Task Tracking System</title>
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+	<!-- icons -->
+	<link href="{% static 'fonts/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/material-design-icons/material-icon.css' %}" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="{% static '/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="{% static '/assets/plugins/material/material.min.css' %}">
+	<link rel="stylesheet" href="{% static '/assets/css/material_style.css' %}">
+	<!-- Theme Styles -->
+	<link href="{% static '/assets/css/theme/dark/theme_style.css' %}" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/theme-color.css' %}" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="{% static 'http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico'%}" />
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
+	
+	 <div class="page-wrapper">
+		<!-- start header -->
+		{% include 'temp/header.html' %}
+		<!-- end header -->
+		
+		<!-- start page container -->
+		<div class="page-container">
+			<!-- start sidebar menu -->
+			{% include 'temp/sidemenu.html' %}
+			<!-- end sidebar menu -->
+			<!-- start page content -->
+			
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+						
+
+
+
+					</div>
+					<div class="row"  style="margin-left:30%"> 
+						<div class="col-md-10">
+							<!-- BEGIN PROFILE SIDEBAR -->
+							<div class="profile-sidebar">
+								<div class="card">
+									<div class="card-body no-padding height-7">
+										<div class="row">
+
+
+											
+								<div style="margin-left:10px;"class="page-title" >User Profile</div>
+							</div>
+							
+											<div class="profile-userpic">
+								
+												<img src="/media/{{all_empdata.uploadimage}}" class="img-responsive" alt=""> </div>
+										</div>
+										<div class="profile-usertitle">
+											<div class="profile-usertitle-name">{{all_empdata.fname}} {{all_empdata.lname}} </div>
+											<div class="profile-usertitle-job"> {{all_empdata.designation}} </div>
+										</div>	
+										
+										<div >
+									<div class="card-head">
+										<header style="float:left;">About Me</header>
+									</div>
+									<div class="card-body no-padding height-6">
+										<div class="profile-desc">
+											Hello I am {{all_empdata.fname}}. I am in {{all_empdata.department}} Department . I love to work
+											with the application interface and
+											the web elements.
+										</div>
+										<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Gender </b>
+												<div class="profile-desc-item pull-right">{{all_empdata.Gender}}</div>
+											</li>
+											<li class="list-group-item">
+												<b> working on Project </b>
+											{% for i in prnames %}
+												<div class="profile-desc-item pull-right">{{i.prname}}</div>
+											</li>
+											{% endfor %}
+											<li class="list-group-item">
+												<b>JoinDate</b>
+												<div class="profile-desc-item pull-right">{{all_empdata.joindate}}</div>
+											</li>
+										</ul>
+										<div class="row list-separated profile-stat">
+											<div class="col-md-4 col-sm-4 col-6">
+												<div class="uppercase profile-stat-title"> 37 </div>
+												<div class="uppercase profile-stat-text"> Projects </div>
+											</div>
+											<div class="col-md-4 col-sm-4 col-6">
+												<div class="uppercase profile-stat-title"> 51 </div>
+												<div class="uppercase profile-stat-text"> Tasks </div>
+											</div>
+											<div class="col-md-4 col-sm-4 col-6">
+												<div class="uppercase profile-stat-title"> 61 </div>
+												<div class="uppercase profile-stat-text"> Uploads </div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+										</div>
+								</div>
+								
+							
+							</div>
+							<!-- END BEGIN PROFILE SIDEBAR -->
+							
+						</div>
+					</div>
+				</div>
+			
+				<!-- end page content -->
+			</div>
+		</center>
+			<!-- end page container -->
+			<!-- start footer -->
+			{% include 'temp/footer.html' %}
+			<!-- end footer -->
+		</div>
+	</div> 
+
+
+	
+	<!-- start js include path -->
+	<script src="{% static '/assets/plugins/jquery/jquery.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/popper/popper.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-blockui/jquery.blockui.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static '/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+	<!-- Common js-->
+	<script src="{% static '/assets/js/app.js' %}"></script>
+	<script src="{% static '/assets/js/layout.js' %}"></script>
+	<script src="{% static '/assets/js/theme-color.js' %}"></script>
+	<!-- Material -->
+	<script src="{% static '/assets/plugins/material/material.min.js' %}"></script>
+	<!--google map-->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;AMP;sensor=false"></script>
+	<!-- end js include path -->
+</body>
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/user_profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:55:18 GMT -->
+</html>

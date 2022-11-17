@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:51:00 GMT -->
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Task Tracking System</title>
+	<!-- google font -->
+	<link href=" https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"
+		type="text/css" />
+	<!-- icons -->
+	<link href="{% static 'fonts/simple-line-icons/simple-line-icons.min.css'%}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/material-design-icons/material-icon.css'%}" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="{% static '/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/plugins/summernote/summernote.css'%}" rel="stylesheet">
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="{% static '/assets/plugins/material/material.min.css'%}">
+	<link rel="stylesheet" href="{%static '/assets/css/material_style.css'%}">
+	<!-- inbox style -->
+	<link href="{% static '/assets/css/pages/inbox.min.css' %}" rel="stylesheet" type="text/css" />
+	<!-- Theme Styles -->
+	<link href="{%static '/assets/css/theme/dark/theme_style.css' %}" rel="stylesheet" id="rt_style_components"
+		type="text/css" />
+	<link href="{% static '/assets/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{%static '/assets/css/theme/dark/theme-color.css' %}" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico" />
+
+
+
+	<!--All for Zoom in and OUT-->
+    <!-- Popup CSS -->
+    <link href="{% static '/assets/vendor_components/Magnific-Popup-master/dist/magnific-popup.css' %}" rel="stylesheet">
+	
+	<!-- Bootstrap extend-->
+	<link rel="stylesheet" href="{% static '/css/bootstrap-extend.css' %}">
+
+
+
+
+
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
+	<div class="page-wrapper">
+				<!-- start header menu -->
+		{% include "temp/header.html" %}
+			</div>
+		</div>
+		<div class="page-container">
+			
+			<!-- start sidebar menu -->
+			{% include "temp/sidemenu.html" %}
+			<!-- end sidebar menu -->
+
+			<!-- start page content -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar row">
+						<div class="page-title-breadcrumb col-md-12">
+
+							<div class=" pull-left">
+
+								<div class="page-title">Screenshots</div>
+							</div>
+
+							<ol style="margin-bottom:20px;"class="breadcrumb page-breadcrumb pull-right">
+								<li>
+									<i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="{% url 'app_pr:Dashboard'%}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+							<a href="{% url 'app_pr:Dashboard' %}"class="active">Dashboard</a>
+
+							</ol> 	
+						</div>
+					
+					<!-- start widget -->				
+					<div class="col-md-12">
+						{% for i in tdata %}						
+						<div class="box-body">
+						  <div class="popup-gallery">
+							  <div  style="float:left;height:200px;width:300px;border:1px solid #d9d9d9;border-radius:10px;margin:10px;">
+								<a  href="/media/{{i.ScreenShot}}">
+									<img style="height:100%;width:100%;border-radius:5px;border:4px sloid #000" src="/media/{{i.ScreenShot}}" alt="" />
+										</a>
+							</div>
+						</div>
+					  </div>
+					{% endfor %} 
+				
+				</div>
+			</div>	
+		</div> 
+
+				{% comment %} vdfg {% endcomment %}
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	{% include "temp/footer.html" %}
+
+	<!-- end footer -->
+	</div>
+	<!-- start js include path -->
+	<script src="{% static '/assets/plugins/jquery/jquery.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/popper/popper.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-blockui/jquery.blockui.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static '/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+	<script src="{%static '/assets/plugins/sparkline/jquery.sparkline.js'  %}"></script>
+	<script src="{% static '/assets/js/pages/sparkline/sparkline-data.js' %}"></script>
+	<!-- Common js-->
+	<script src="{% static '/assets/js/app.js' %}"></script>
+	<script src="{% static '/assets/js/layout.js'%}"></script>
+	<script src="{% static '/assets/js/theme-color.js'%}"></script>
+	<!-- material -->
+	<script src="{% static '/assets/plugins/material/material.min.js'  %}"></script>
+	<!--apex chart-->
+	<script src="{% static '/assets/plugins/apexcharts/apexcharts.min.js' %}"></script>
+	<script src="{% static '/assets/js/pages/chart/chartjs/home-data.js' %}"></script>
+	<!-- summernote -->
+	<script src="{% static '/assets/plugins/summernote/summernote.js' %}"></script>
+	<script src="{% static '/assets/js/pages/summernote/summernote-data.js' %}"></script>
+	{% comment %} <script src="{% static '/assets/medium-zoom.min.js' %}" > </script> {% endcomment %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<!-- end js include path -->
+	<!-- All For Zoom in -->
+	
+    <!-- Magnific popup JavaScript -->
+    <script src="{% static  '/assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static '/assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js' %}"></script>
+	
+	<!-- SlimScroll -->
+	<script src="{% static  '/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+	
+	
+</body>
+
+
+<!--
+	
+	
+	Mirrored from radixtouch.in/templates/admin/smart/source/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:53:23 GMT -->
+
+</html>

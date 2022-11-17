@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:51:00 GMT -->
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Task Tracking System</title>
+	<!-- google font -->
+	<link href=" https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"
+		type="text/css" />
+	<!-- icons -->
+	<link href="{% static 'fonts/simple-line-icons/simple-line-icons.min.css'%}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/material-design-icons/material-icon.css'%}" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="{% static '/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/plugins/summernote/summernote.css'%}" rel="stylesheet">
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="{% static '/assets/plugins/material/material.min.css'%}">
+	<link rel="stylesheet" href="{%static '/assets/css/material_style.css'%}">
+	<!-- inbox style -->
+	<link href="{% static '/assets/css/pages/inbox.min.css' %}" rel="stylesheet" type="text/css" />
+	<!-- Theme Styles -->
+	<link href="{%static '/assets/css/theme/dark/theme_style.css' %}" rel="stylesheet" id="rt_style_components"
+		type="text/css" />
+	<link href="{% static '/assets/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{%static '/assets/css/theme/dark/theme-color.css' %}" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico" />
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
+	<div class="page-wrapper">
+		<!-- start header -->
+				
+				<!-- start header menu -->
+				{% include "temp/header.html" %}
+			</div>
+		</div>
+		<!-- end header -->
+
+		
+		<!-- start page container -->
+		<div class="page-container">
+			
+			<!-- start sidebar menu -->
+			{% include "temp/sidemenu.html" %}
+			<!-- end sidebar menu -->
+
+
+
+
+			<!-- start page content -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Dashboard</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="#">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li class="active">Dashboard</li>
+							</ol>
+						</div>
+					</div>
+
+
+
+
+
+					{% for message in messages %}
+					<div class="container-fluid p-0">
+					  <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						  <span aria-hidden="true">×</span>
+						</button>
+						{{ message }}
+					  </div>
+					</div>
+					{% endfor %}
+
+
+
+					<!-- start widget -->
+					<div class="state-overview">
+						<div class="row">
+							<div class="col-xl-3 col-md-6 col-12">
+								<div class="info-box bg-b-green">
+									<span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Total Employee</span>
+										<span class="info-box-number">450</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 45%"></div>
+										</div>
+										<span class="progress-description">
+											45% Increase in 28 Days
+										</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-xl-3 col-md-6 col-12">
+								<div class="info-box bg-b-yellow">
+									<span class="info-box-icon push-bottom"><i class="material-icons">person</i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Total Project				
+										</span>
+										<span class="info-box-number">155</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 40%"></div>
+										</div>
+										<span class="progress-description">
+											40% Increase in 28 Days
+										</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-xl-3 col-md-6 col-12">
+								<div class="info-box bg-b-blue">
+									<span class="info-box-icon push-bottom"><i class="material-icons">school</i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Total Task</span>
+										<span class="info-box-number">52</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 85%"></div>
+										</div>
+										<span class="progress-description">
+											85% Increase in 28 Days
+										</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+						</div>
+					</div>
+					<!-- end widget -->
+
+					<!-- start course list -->
+					<div class="row">
+						{% for i in empdata %}
+						<div class="col-lg-3 col-md-6 col-12 col-sm-4">
+							<div class="blogThumb">
+								<div class="thumb-center" style="height:170px;">
+									
+									<!--Screenshot Url -->
+									<div style="height:95%;border:2px solid #d9d9d9 ">
+										{% for k in trackerapi %}
+                                        {% if i.pk|stringformat:"s" == k.Userid|stringformat:"s" %}
+										<a href="{% url 'app_pr:screenshot' k.Userid %}">
+										<img style="height:100%;width:105%" class="img-responsive" alt="user"
+										src="/media/{{k.ScreenShot}}" >
+									</a>					
+												{% endif %}
+												{% endfor%}
+										</div>
+										<a href="{% url 'app_pr:user_profile' i.pk %}"><img style="border-radius:100px;padding:5px;height:60px;width:60px;float:left;margin-top:5px;" class="img-responsive" alt="user"
+										src="/media/{{i.uploadimage}}">
+										</a>
+									</div>
+
+
+								<div class="course-box"  >
+									<a href="{% url 'app_pr:user_profile' i.pk %}"><p style="margin-top:20px"><span><i class="ti-user"></i>{{i.fname|upper}} {{i.lname |upper}}</span></p>
+									</a>
+									
+
+
+									{% if i.pk in userloginlist %}
+											{% for j in all_data %}
+											{% if i.pk|stringformat:"s" == j.uid|stringformat:"s" %}
+													{% if j.status == "Login" %}
+														<div style="display: inline-block;
+															width: 15px;
+															height: 15px;									
+															float:right;
+															background-color: green;
+															border-radius: 50%;
+															position: relative;
+															bottom:30px;
+															right:10px;">
+					
+															<span class="blink"></span>
+														</div>
+													{% else %}
+																<div style="display: inline-block;
+																width: 15px;
+																height: 15px;									
+																float:right;
+																background-color: red;
+																border-radius: 50%;
+																position: relative;
+																bottom:30px;
+																right:10px;">
+														
+																<span class="blink"></span>
+															</div>	
+													{% endif %}
+											
+											{% endif %}
+										
+										{% endfor %}
+									{% else %}
+									<div style="display: inline-block;
+																width: 15px;
+																height: 15px;									
+																float:right;
+																background-color: red;
+																border-radius: 50%;
+																position: relative;
+																bottom:30px;
+																right:10px;">
+														
+																<span class="blink"></span>
+															</div>
+									{% endif %}
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<img  style="border-radius:100px;height:30px; margin:2px;"   src="\media\Images\mousee.png">
+										{% for m in trackerapi %}
+                                        {% if i.pk|stringformat:"s" == m.Userid|stringformat:"s" %}
+										
+										<label >{{m.mouseClickevent}}</label>
+										{% endif %}
+										{% endfor %}
+									</div>
+									<div class="col-md-6">
+										{% for k in trackerapi %}
+                                        {% if i.pk|stringformat:"s" == k.Userid|stringformat:"s" %}
+										
+										<label style="float:right; margin:5px;" >{{ k.keyboardClickevent }}</label>
+										{% endif %}
+										{% endfor %}
+										<img  style="border-radius:100px;height:30px; margin:2px; float:right" src="\media\Images\kye1.png">
+
+											</div>
+											<div>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+						{% endfor %}
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--PROJECT TABLE -->
+		
+	</div>
+</div>
+
+	 
+
+
+
+	<!-- end page content -->
+	
+	</div>
+	<!-- end page container -->
+	<!-- start footer -->
+
+	{% include "temp/footer.html" %}
+
+	<!-- end footer -->
+	</div>
+	<!-- start js include path -->
+	<script src="{% static '/assets/plugins/jquery/jquery.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/popper/popper.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-blockui/jquery.blockui.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static '/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+	<script src="{%static '/assets/plugins/sparkline/jquery.sparkline.js'  %}"></script>
+	<script src="{% static '/assets/js/pages/sparkline/sparkline-data.js' %}"></script>
+	<!-- Common js-->
+	<script src="{% static '/assets/js/app.js' %}"></script>
+	<script src="{% static '/assets/js/layout.js'%}"></script>
+	<script src="{% static '/assets/js/theme-color.js'%}"></script>
+	<!-- material -->
+	<script src="{% static '/assets/plugins/material/material.min.js'  %}"></script>
+	<!--apex chart-->
+	<script src="{% static '/assets/plugins/apexcharts/apexcharts.min.js' %}"></script>
+	<script src="{% static '/assets/js/pages/chart/chartjs/home-data.js' %}"></script>
+	<!-- summernote -->
+	<script src="{% static '/assets/plugins/summernote/summernote.js' %}"></script>
+	<script src="{% static '/assets/js/pages/summernote/summernote-data.js' %}"></script>
+	<!-- end js include path -->
+</body>
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:53:23 GMT -->
+
+</html>

@@ -1,0 +1,132 @@
+
+{% load static %}
+
+<div class="sidebar-container">
+    <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+        <div id="remove-scroll" class="left-sidemenu">
+            <ul class="sidemenu  page-header-fixed slimscroll-style" data-keep-expanded="false"
+                data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                <li class="sidebar-toggler-wrapper hide">
+                    <div class="sidebar-toggler">
+                        <span></span>
+                    </div>
+                </li>
+                <li class="sidebar-user-panel">
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="\media\Images\delete-user-17.jpg" class="img-circle user-img-circle"
+                                alt="User Image" />
+                        </div>
+                        <div class="pull-left info">
+                            <p>{{request.session.userfname}}</p>
+                            <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">
+                                    Online</span></a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!--Changed By me-->
+                {% comment %} {{ request.session.type }} {% endcomment %}
+                {% if  request.session.type == "Superadmin" %}
+                <li class="nav-item">
+                    <a href="{% url 'app_pr:Dashboard'%}" class="nav-link nav-toggle"> 
+                        <i class="material-icons">dashboard</i>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'app_pr:ProjectDetail'%}" class="nav-link nav-toggle"> 
+                        <i class="material-icons">description</i>
+                        <span class="title">Project Detail</span>
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    <a href="{% url 'app_pr:Taskdetail'%}" class="nav-link nav-toggle"> 
+                        <i class="material-icons">list</i>
+                        <span class="title">Task Detail</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{% url 'app_pr:EmpDetail'%}" class="nav-link nav-toggle"> 
+                        <i class="material-icons">group</i>
+                        <span class="title">All
+                            Employee</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'app_pr:add_employee' %}" class="nav-link nav-toggle"> 
+                        <i class="material-icons">airline_seat_legroom_reduced</i>
+                        <span class="title">Add Employee</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{% url 'app_pr:SuperUsers' %}" class="nav-link nav-toggle"> 
+                        <i class="material-icons">accessibility</i>
+                        <span class="title">Add SuperUsers</span>
+                    </a>
+                </li>
+                
+                <!--End my Changes-->
+                {% comment %} <li class="nav-item">
+                    <a href="app_pr:EmpDetail" class="nav-link nav-toggle">     
+                    <i class="material-icons">group</i>
+
+                    <span class="title">Employees</span><span class="arrow"></span>
+                    <ul class="sub-menu">
+                        
+                        <li class="nav-item">
+                            <a href="{% url 'app_pr:EmpDetail'%}" class="nav-link "> <span class="title">All
+                                Employee</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'app_pr:add_employee'%}" class="nav-link "> <span class="title">Add
+                                Employee</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'app_pr:SuperUsers'%}" class="nav-link "> <span class="title">Add
+                            SuperUsers</span>
+                            </a>
+                        </li>
+                        </li> {% endcomment %}
+
+
+
+                        {% elif request.session.type == "TL" %}
+
+                        <li class="nav-item">
+                            <a href="{% url 'app_pr:Dashboard'%}" class="nav-link nav-toggle"> 
+                                <i class="material-icons">dashboard</i>
+                                <span class="title">Dashboard {{ request.session.type }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'app_pr:ProjectDetail'%}" class="nav-link nav-toggle"> 
+                                <i class="material-icons">description</i>
+                                <span class="title">Project Detail</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a href="{% url 'app_pr:Taskdetail'%}" class="nav-link nav-toggle"> 
+                                <i class="material-icons">list</i>
+                                <span class="title">Task Detail</span>
+                            </a>
+                        </li>
+                        {% else %}
+                        <h2> Enter with Wrong department</h2>
+                       {% endif %}
+                    </ul>
+                </li>
+               
+    
+            
+                
+            </ul>
+        </div>
+    </div>
+</div>

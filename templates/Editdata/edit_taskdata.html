@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/edit_student.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:56:33 GMT -->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Smart University | Bootstrap Responsive Admin Template</title>
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+	<!-- icons -->
+	<link href="{% static 'fonts/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'fonts/material-design-icons/material-icon.css' %}" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="{% static '/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="{% static '/assets/plugins/material/material.min.css' %}">
+	<link rel="stylesheet" href="{% static '/assets/css/material_style.css' %}">
+	<!-- Theme Styles -->
+	<link href="{% static '/assets/css/theme/dark/theme_style.css' %}" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static '/assets/css/theme/dark/theme-color.css' %}" rel="stylesheet" type="text/css" />
+	<!-- dropzone -->
+	<link href="{% static '/assets/plugins/dropzone/dropzone.css' %}" rel="stylesheet" media="screen">
+	<!-- Date Time item CSS -->
+	<link rel="stylesheet" href="{% static '/assets/plugins/flatpicker/css/flatpickr.min.css' %}" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico" />
+</head>
+<!-- END HEAD -->
+
+<body
+	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
+	<div class="page-wrapper">
+		<!-- start header -->
+		{% include 'temp/header.html'%}
+		<!-- end header -->
+		
+		<!-- start page container -->
+		<div class="page-container">
+			<!-- start sidebar menu -->
+			
+			{% include 'temp/sidemenu.html' %}
+
+			<!-- end sidebar menu -->
+			<!-- start page content -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Edit Task Details</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="{% url 'app_pr:Dashboard' %}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li><a class="parent-item" href="{% url 'app_pr:Dashboard' %}">Dashboard</a><i class="fa fa-angle-right"></i>
+								</li>
+							
+							</ol>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card-box">
+								<div class="card-head">
+									<header>Basic Information</header>
+									<button id="panel-button"
+										class="mdl-button mdl-js-button mdl-button--icon pull-right"
+										data-upgraded=",MaterialButton">
+										<i class="material-icons">more_vert</i>
+									</button>
+									<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+										data-mdl-for="panel-button">
+										<li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+										</li>
+										<li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+										</li>
+										<li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+											here</li>
+									</ul>
+								</div>
+								<form method="POST">
+									{% csrf_token %}
+
+
+									<div class="card-body row">
+										
+										<div class="col-lg-6 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text" name="taskid" id="txtFirstName" value={{taskdata.Task_ID}}>
+												<label class="mdl-textfield__label">Task ID</label>
+											</div>
+										</div>
+										
+
+										<div class="col-lg-6 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<select  class="mdl-textfield__input" type="text" name="Taskprid" id="txtFirstName"  >
+													
+												{% if taskdata.pk > 0 %}
+												{% for t in prdata %}
+													<option selected class="mdl-menu__item" value="{{t.pk}}" >{{t.prname}}</option>	
+												{% endfor %} 
+												
+												{% else %}
+												 <option class="mdl-menu__item">select</option> 													<option class="mdl-menu__item" value="{{t.pk}}"> {{t.prname }}  </option>
+												{% endif %}
+													
+												</select>
+												<label class="mdl-textfield__label">Project Name</label>
+											</div>
+										</div>
+										<div class="col-lg-6 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text" name="taskname" id="txtLasttName" value="{{taskdata.Task_Name}}">
+												<label class="mdl-textfield__label">Task Name</label>
+											</div>
+										</div>
+										
+										<!--change-->
+
+
+										<div class="col-lg-6 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<select class="mdl-textfield__input"  name="User" id="txtPwd" >
+												{% for ed in empdata %}
+													{% if taskdata.User|stringformat:"s" == ed.pk|stringformat:"s" %}
+														<option class="mdl-menu__item" selected value={{ed.pk}}>{{ed.fname}}</option>
+													{% else %}
+													<option class="mdl-menu__item" value={{ed.pk}}>{{ed.fname}}</option>
+													{% endif %}
+												{% endfor %}
+												</select>
+												<label class="mdl-textfield__label">User</label>
+											</div>
+										</div>
+
+										<div class="col-lg-6 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text" name="taskduration" id="txtLasttName" value="{{taskdata.Task_duration}}">
+												<label class="mdl-textfield__label">Task duration</label>
+											</div>
+										</div>
+										
+
+										<div class="col-lg-6 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="Time" name="Currenttime",id="currentTime" value="{{taskdata.Current_Time}}">
+												<label class="mdl-textfield__label">Current Time</label>
+												{% comment %} <script>
+													var today = new Date();
+													var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+													  document.getElementById("currentTime").value = time;
+													</script> {% endcomment %}
+											</div>
+										</div>
+										<!--end change-->
+
+										<div class="col-lg-6 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<select class="mdl-textfield__input"  name="taskstatus" id="txtPwd" >
+												<option class="mdl-menu__item" >select</option>	
+												{% if taskdata.pk > 0 %}
+												<option selected class="mdl-menu__item" value="{{taskdata.Task_Status}}" >{{taskdata.Task_Status}}</option>	
+												{% else %}
+												<option  class="mdl-menu__item" select data></option>
+												{% endif %}
+												<option  class="mdl-menu__item" >Running</option>
+												<option  class="mdl-menu__item" >Complete</option>
+												<option  class="mdl-menu__item" >Pending</option>
+												</select>
+												<label class="mdl-textfield__label">Task Status</label>
+											</div>
+										</div>
+										
+										
+										<div class="col-lg-12 p-t-20">
+											<div class="mdl-textfield mdl-js-textfield txt-full-width">
+												<label>Task Details</label>
+
+												<input name="taskdetail" class="mdl-textfield__input" rows="4" id="text7" value={{taskdata.Task_Details}}>
+											</div>
+										</div>
+										
+										<div class="col-lg-12 p-t-20 text-center">
+											<button type="submit" name="update"
+												class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Update</button>
+											<a href="{% url 'app_pr:Taskdetail'%}">
+												<button type="button"
+												class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
+											</a>
+											</div>
+										</form>
+									</div>
+				</div>	   
+			   </form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end page content -->
+			<!-- start chat sidebar -->
+			<div class="chat-sidebar-container" data-close-on-body-click="false">
+				<div class="chat-sidebar">
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-bs-toggle="tab"> <i
+									class="material-icons">chat</i>Chat
+								<span class="badge badge-danger">4</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#quick_sidebar_tab_3" class="nav-link tab-icon" data-bs-toggle="tab"> <i
+									class="material-icons">settings</i>
+								Settings
+							</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						
+					</div>
+				</div>
+			</div>
+			<!-- end chat sidebar -->
+		</div>
+		<!-- end page container -->
+		<!-- start footer -->
+		
+		{% include 'temp/footer.html'%}
+		<!-- end footer -->
+	</div>
+	<!-- start js include path -->
+	<script src="{% static '/assets/plugins/jquery/jquery.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/popper/popper.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-blockui/jquery.blockui.min.js' %}"></script>
+	<script src="{% static '/assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static '/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- Common js-->
+	<script src="{% static '/assets/js/app.js' %}"></script>
+	<script src="{% static '/assets/js/layout.js' %}"></script>
+	<script src="{% static '/assets/js/theme-color.js' %}"></script>
+	<!-- Material -->
+	<script src="{% static '/assets/plugins/material/material.min.js' %}"></script>
+	<script src="{% static '/assets/js/pages/material-select/getmdl-select.js' %}"></script>
+	<script src="{% static '/assets/plugins/flatpicker/js/flatpicker.min.js' %}"></script>
+	<script src="{% static '/assets/js/pages/date-time/date-time.init.js' %}"></script>
+	<!-- dropzone -->
+	<script src="{% static '/assets/plugins/dropzone/dropzone.js' %}"></script>
+	<script src="{% static '/assets/plugins/dropzone/dropzone-call.js' %}"></script>
+	<!-- end js include path -->
+</body>
+
+
+<!-- Mirrored from radixtouch.in/templates/admin/smart/source/dark/edit_student.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Feb 2021 07:56:33 GMT -->
+</html>
